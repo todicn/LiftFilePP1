@@ -1,0 +1,63 @@
+# Cursor Rules for RateLimiter Project
+
+## Project Context
+
+
+## Code Style & Standards
+- Follow C# naming conventions (PascalCase for classes/methods, camelCase for fields)
+- Use explicit type declarations where helpful for readability
+- Prefer async/await patterns for all public APIs
+- Use nullable reference types and handle null cases properly
+- Write XML documentation comments for public APIs
+
+## Architecture Patterns
+- **Options Pattern**: For configuration management via IOptions<T>
+- **Dependency Injection**: Use Microsoft.Extensions.DependencyInjection
+
+## Testing Guidelines
+- Write unit tests for all public methods
+- Use xUnit framework with async test patterns
+- Mock external dependencies using interfaces
+- Test edge cases and error conditions
+- Maintain high test coverage for critical paths
+
+## Performance Considerations
+- All implementations must be thread-safe
+- Minimize memory allocations in hot paths
+- Consider using Stopwatch for high-precision timing
+- Profile memory usage for long-running scenarios
+
+## Error Handling
+- Validate input parameters and throw ArgumentException for invalid values
+- Use descriptive error messages that help developers
+- Log important events for debugging and monitoring
+
+## GitHub Integration
+- Use conventional commit messages for clear history
+- Create meaningful PR descriptions with architecture explanations
+- Tag commits with relevant issue numbers when applicable
+- Maintain clean commit history with logical groupings
+
+
+## Code Review Checklist
+- [ ] Thread safety verified with lock analysis
+- [ ] Unit tests cover happy path and edge cases
+- [ ] XML documentation updated for public APIs
+- [ ] Performance impact considered for high-throughput scenarios
+- [ ] Configuration options properly validated
+- [ ] Error messages are clear and actionable
+
+## Preferred Libraries
+- Microsoft.Extensions.* for DI, configuration, and options
+- StackExchange.Redis for distributed scenarios
+- xUnit for testing framework
+- System.Diagnostics.Stopwatch for timing
+- Implement core functionality from scratch
+
+## File Organization
+- Keep interfaces in `Interfaces/` folder
+- Implementations in `Implementations/` folder
+- Services and patterns in `Services/` folder
+- Configuration in `Configuration/` folder
+- Tests in `Tests/` folder
+- Tests mirror the main project structure
